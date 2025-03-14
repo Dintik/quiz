@@ -1,6 +1,7 @@
 @import "../../../assets/styles/_resources";
 
 .container {
+    background-color: $page_bg;
     width: 100%;
     padding: $sp_gap;
     max-width: $container_sp;

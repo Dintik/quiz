@@ -3,7 +3,7 @@ import { Albert_Sans, Nunito_Sans, Niconne } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getLocale } from 'next-intl/server'
 import { Container } from '@/components/ui/Container'
-import '@/assets/styles/globals.css'
+import '@/assets/styles/globals.scss'
 
 const albertSans = Albert_Sans({
   variable: '--font-albert-sans',
