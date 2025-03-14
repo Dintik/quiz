@@ -1,24 +1,28 @@
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 export default function EmailPage() {
+  const t = useTranslations()
+
   return (
     <div>
       <div>
         <div>
-          <h1>Email</h1>
-          <p>Enter your email to get full access</p>
+          <h1>{t('email.title')}</h1>
+          <p>{t('email.description')}</p>
         </div>
 
-        <input type='email' placeholder='Your email' />
+        <input type='email' placeholder={t('email.placeholder')} />
 
         <p>
-          By continuing I agree with{' '}
-          <Link href={'#privacyPolicy'}>Privacy policy</Link> and{' '}
-          <Link href={'#termsOfUse'}>Terms of use</Link>.
+          {t('email.privacy_notice')}{' '}
+          <Link href={'#privacyPolicy'}>{t('email.privacy_policy')}</Link>{' '}
+          {t('common.and')}{' '}
+          <Link href={'#termsOfUse'}>{t('email.terms_of_use')}</Link>.
         </p>
       </div>
 
-      <Link href={'/result'}>Next</Link>
+      <Link href={'/result'}>{t('common.next')}</Link>
     </div>
   )
 }

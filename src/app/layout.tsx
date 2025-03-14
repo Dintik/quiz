@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Albert_Sans, Nunito_Sans, Niconne } from 'next/font/google'
+import { NextIntlClientProvider } from 'next-intl'
+import { getLocale } from 'next-intl/server'
 import '@/assets/styles/globals.css'
 
 const albertSans = Albert_Sans({
@@ -23,17 +25,22 @@ export const metadata: Metadata = {
   description: 'This app is a test job for a frontend developer position'
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
+  const locale = await getLocale()
+  const messages = (await import(`../../messages/${locale}.json`)).default
+
   return (
-    <html lang='en'>
+    <html lang={locale}>
       <body
         className={`${albertSans.variable} ${nunitoSans.variable} ${niconne.variable}`}
       >
-        {children}
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   )

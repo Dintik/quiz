@@ -1,0 +1,70 @@
+{
+  "quiz": {
+    "questions": {
+      "language": {
+        "title": "Was ist Ihre bevorzugte Sprache?",
+        "description": "Sprache wählen"
+      },
+      "gender": {
+        "title": "Mit welchem Geschlecht identifizieren Sie sich?",
+        "description": "Bitte teilen Sie mit, wie Sie sich identifizieren",
+        "options": {
+          "female": "Weiblich",
+          "male": "Männlich",
+          "other": "Andere"
+        }
+      },
+      "age": {
+        "title": "Wie alt sind Sie?",
+        "description": "",
+        "options": {
+          "18-29": "18-29 Jahre",
+          "30-39": "30-39 Jahre",
+          "40-49": "40-49 Jahre",
+          "50+": "50+"
+        }
+      },
+      "hate_in_book": {
+        "title": "Was hassen Sie am meisten in einem Buch?",
+        "description": "",
+        "options": {
+          "lack_of_logic": "Mangel an Logik",
+          "slow_speed": "Ein langsames Tempo",
+          "lack_of_humor": "Mangel an Humor",
+          "generic_ending": "Ein zu generisches Ende"
+        }
+      },
+      "favorite_topics": {
+        "title": "Was sind Ihre Lieblingsthemen?",
+        "description": "Wählen Sie bis zu 3 Themen, die Sie mögen",
+        "options": {
+          "young_adult": "Junge Erwachsene",
+          "romance": "Romantik",
+          "bad_boy": "Bad Boy",
+          "werewolf": "Werwolf",
+          "action": "Action",
+          "royal_obsession": "Königliche Obsession",
+          "billionaire": "Milliardär"
+        }
+      }
+    }
+  },
+  "email": {
+    "title": "E-Mail",
+    "description": "Geben Sie Ihre E-Mail-Adresse ein, um vollen Zugriff zu erhalten",
+    "placeholder": "Ihre E-Mail",
+    "privacy_notice": "Mit dem Fortfahren stimme ich zu",
+    "privacy_policy": "Datenschutzerklärung",
+    "terms_of_use": "Nutzungsbedingungen"
+  },
+  "result": {
+    "title": "Vielen Dank",
+    "description": "für Ihre Unterstützung und das Ausfüllen des Quiz",
+    "download": "Meine Antworten herunterladen",
+    "retake": "Quiz wiederholen"
+  },
+  "common": {
+    "and": "und",
+    "next": "Weiter"
+  }
+} 

@@ -1,24 +1,27 @@
 'use client'
 import { Button } from '@/components/ui/Button'
+import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 
 export default function ResultPage() {
+  const t = useTranslations()
+
   return (
     <div>
       <div>
         <div>
-          <h1>Thank you</h1>
-          <p>for supporting us and passing quiz</p>
+          <h1>{t('result.title')}</h1>
+          <p>{t('result.description')}</p>
         </div>
 
         {/* TODO: check-icon */}
       </div>
 
-      <button onClick={() => null}>Download my answers</button>
-      <Link href={'/quiz/1'}>Retake quiz</Link>
-      <Button onClick={() => null}>Retake quiz</Button>
+      <button onClick={() => null}>{t('result.download')}</button>
+      <Link href={'/quiz/1'}>{t('result.retake')}</Link>
+      <Button onClick={() => null}>{t('result.retake')}</Button>
       <Button isLoading onClick={() => null}>
-        Retake quiz
+        {t('result.retake')}
       </Button>
     </div>
   )

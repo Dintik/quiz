@@ -1,0 +1,70 @@
+{
+  "quiz": {
+    "questions": {
+      "language": {
+        "title": "Quelle est votre langue préférée?",
+        "description": "Choisissez la langue"
+      },
+      "gender": {
+        "title": "À quel genre vous identifiez-vous?",
+        "description": "Veuillez partager comment vous vous identifiez",
+        "options": {
+          "female": "Femme",
+          "male": "Homme",
+          "other": "Autre"
+        }
+      },
+      "age": {
+        "title": "Quel âge avez-vous?",
+        "description": "",
+        "options": {
+          "18-29": "18-29 ans",
+          "30-39": "30-39 ans",
+          "40-49": "40-49 ans",
+          "50+": "50+"
+        }
+      },
+      "hate_in_book": {
+        "title": "Que détestez-vous le plus dans un livre?",
+        "description": "",
+        "options": {
+          "lack_of_logic": "Le manque de logique",
+          "slow_speed": "Un rythme trop lent",
+          "lack_of_humor": "Le manque d'humour",
+          "generic_ending": "Une fin trop générique"
+        }
+      },
+      "favorite_topics": {
+        "title": "Quels sont vos sujets préférés?",
+        "description": "Choisissez jusqu'à 3 sujets que vous aimez",
+        "options": {
+          "young_adult": "Jeune adulte",
+          "romance": "Romance",
+          "bad_boy": "Mauvais garçon",
+          "werewolf": "Loup-garou",
+          "action": "Action",
+          "royal_obsession": "Obsession royale",
+          "billionaire": "Milliardaire"
+        }
+      }
+    }
+  },
+  "email": {
+    "title": "E-mail",
+    "description": "Entrez votre e-mail pour obtenir un accès complet",
+    "placeholder": "Votre e-mail",
+    "privacy_notice": "En continuant, j'accepte",
+    "privacy_policy": "Politique de confidentialité",
+    "terms_of_use": "Conditions d'utilisation"
+  },
+  "result": {
+    "title": "Merci",
+    "description": "de nous soutenir et d'avoir complété le quiz",
+    "download": "Télécharger mes réponses",
+    "retake": "Refaire le quiz"
+  },
+  "common": {
+    "and": "et",
+    "next": "Suivant"
+  }
+} 

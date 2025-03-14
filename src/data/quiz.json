@@ -2,8 +2,8 @@
   "questions": [
     {
       "type": "single-select",
-      "title": "What is your preferred language?",
-      "description": "Choose language",
+      "title": "quiz.questions.language.title",
+      "description": "quiz.questions.language.description",
       "options": [
         { "text": "English" },
         { "text": "French" },
@@ -13,107 +13,107 @@
     },
     {
       "type": "single-select-image",
-      "title": "What gender do you identify with?",
-      "description": "Please share how do you identify yourself",
+      "title": "quiz.questions.gender.title",
+      "description": "quiz.questions.gender.description",
       "options": [
         {
-          "text": "Female",
+          "text": "quiz.questions.gender.options.female",
           "image": "/images/female.jpg"
         },
         {
-          "text": "Male",
+          "text": "quiz.questions.gender.options.male",
           "image": "/images/male.jpg"
         },
         {
-          "text": "Other",
+          "text": "quiz.questions.gender.options.other",
           "image": "/images/other.jpg"
         }
       ]
     },
     {
       "type": "single-select",
-      "title": "What is your age?",
-      "description": "",
+      "title": "quiz.questions.age.title",
+      "description": "quiz.questions.age.description",
       "options": [
-        { "text": "18-29 years" },
-        { "text": "30-39 years" },
-        { "text": "40-49 years" },
-        { "text": "50+" }
+        { "text": "quiz.questions.age.options.18-29" },
+        { "text": "quiz.questions.age.options.30-39" },
+        { "text": "quiz.questions.age.options.40-49" },
+        { "text": "quiz.questions.age.options.50+" }
       ]
     },
     {
       "type": "multiple-select",
-      "title": "What do you hate the most in a book?",
-      "description": "",
+      "title": "quiz.questions.hate_in_book.title",
+      "description": "quiz.questions.hate_in_book.description",
       "options": [
-        { "text": "Lack of logic" },
-        { "text": "A slow speed" },
-        { "text": "Lack of humor" },
-        { "text": "Way too generic ending" }
+        { "text": "quiz.questions.hate_in_book.options.lack_of_logic" },
+        { "text": "quiz.questions.hate_in_book.options.slow_speed" },
+        { "text": "quiz.questions.hate_in_book.options.lack_of_humor" },
+        { "text": "quiz.questions.hate_in_book.options.generic_ending" }
       ]
     },
     {
       "type": "bubble",
-      "title": "What are your favorite topics?",
-      "description": "Choose up to 3 topics you like",
+      "title": "quiz.questions.favorite_topics.title",
+      "description": "quiz.questions.favorite_topics.description",
       "optionsByAge": {
-        "18-29 years": [
+        "quiz.questions.age.options.18-29": [
           {
-            "text": "Young Adult",
+            "text": "quiz.questions.favorite_topics.options.young_adult",
             "image": "/images/youngAdult.jpg"
           },
           {
-            "text": "Romance",
+            "text": "quiz.questions.favorite_topics.options.romance",
             "image": "/images/romance.jpg"
           },
           {
-            "text": "Bad Boy",
+            "text": "quiz.questions.favorite_topics.options.bad_boy",
             "image": "/images/badBoy.jpg"
           },
           {
-            "text": "Werewolf",
+            "text": "quiz.questions.favorite_topics.options.werewolf",
             "image": "/images/werewolf.jpg"
           }
         ],
-        "30-39 years": [
+        "quiz.questions.age.options.30-39": [
           {
-            "text": "Action",
+            "text": "quiz.questions.favorite_topics.options.action",
             "image": "/images/action.jpg"
           },
           {
-            "text": "Royal Obsession",
+            "text": "quiz.questions.favorite_topics.options.royal_obsession",
             "image": "/images/royalObsession.jpg"
           },
           {
-            "text": "Romance",
+            "text": "quiz.questions.favorite_topics.options.romance",
             "image": "/images/romance.jpg"
           },
           {
-            "text": "Billionaire",
+            "text": "quiz.questions.favorite_topics.options.billionaire",
             "image": "/images/billionaire.jpg"
           }
         ],
-        "40-49 years": [
+        "quiz.questions.age.options.40-49": [
           {
-            "text": "Royal Obsession",
+            "text": "quiz.questions.favorite_topics.options.royal_obsession",
             "image": "/images/royalObsession.jpg"
           },
           {
-            "text": "Billionaire",
+            "text": "quiz.questions.favorite_topics.options.billionaire",
             "image": "/images/billionaire.jpg"
           },
           {
-            "text": "Action",
+            "text": "quiz.questions.favorite_topics.options.action",
             "image": "/images/action.jpg"
           }
         ],
-        "50+": [
+        "quiz.questions.age.options.50+": [
           {
-            "text": "Action",
+            "text": "quiz.questions.favorite_topics.options.action",
             "image": "/images/action.jpg"
           },
           {
-            "text": "Royal Obsession",
+            "text": "quiz.questions.favorite_topics.options.royal_obsession",
             "image": "/images/royalObsession.jpg"
           }
         ]

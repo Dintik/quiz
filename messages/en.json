@@ -1,0 +1,70 @@
+{
+  "quiz": {
+    "questions": {
+      "language": {
+        "title": "What is your preferred language?",
+        "description": "Choose language"
+      },
+      "gender": {
+        "title": "What gender do you identify with?",
+        "description": "Please share how do you identify yourself",
+        "options": {
+          "female": "Female",
+          "male": "Male",
+          "other": "Other"
+        }
+      },
+      "age": {
+        "title": "What is your age?",
+        "description": "",
+        "options": {
+          "18-29": "18-29 years",
+          "30-39": "30-39 years",
+          "40-49": "40-49 years",
+          "50+": "50+"
+        }
+      },
+      "hate_in_book": {
+        "title": "What do you hate the most in a book?",
+        "description": "",
+        "options": {
+          "lack_of_logic": "Lack of logic",
+          "slow_speed": "A slow speed",
+          "lack_of_humor": "Lack of humor",
+          "generic_ending": "Way too generic ending"
+        }
+      },
+      "favorite_topics": {
+        "title": "What are your favorite topics?",
+        "description": "Choose up to 3 topics you like",
+        "options": {
+          "young_adult": "Young Adult",
+          "romance": "Romance",
+          "bad_boy": "Bad Boy",
+          "werewolf": "Werewolf",
+          "action": "Action",
+          "royal_obsession": "Royal Obsession",
+          "billionaire": "Billionaire"
+        }
+      }
+    }
+  },
+  "email": {
+    "title": "Email",
+    "description": "Enter your email to get full access",
+    "placeholder": "Your email",
+    "privacy_notice": "By continuing I agree with",
+    "privacy_policy": "Privacy policy",
+    "terms_of_use": "Terms of use"
+  },
+  "result": {
+    "title": "Thank you",
+    "description": "for supporting us and passing quiz",
+    "download": "Download my answers",
+    "retake": "Retake quiz"
+  },
+  "common": {
+    "and": "and",
+    "next": "Next"
+  }
+} 

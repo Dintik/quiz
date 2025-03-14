@@ -1,0 +1,70 @@
+{
+  "quiz": {
+    "questions": {
+      "language": {
+        "title": "¿Cuál es tu idioma preferido?",
+        "description": "Elige el idioma"
+      },
+      "gender": {
+        "title": "¿Con qué género te identificas?",
+        "description": "Por favor, comparte cómo te identificas",
+        "options": {
+          "female": "Femenino",
+          "male": "Masculino",
+          "other": "Otro"
+        }
+      },
+      "age": {
+        "title": "¿Qué edad tienes?",
+        "description": "",
+        "options": {
+          "18-29": "18-29 años",
+          "30-39": "30-39 años",
+          "40-49": "40-49 años",
+          "50+": "50+"
+        }
+      },
+      "hate_in_book": {
+        "title": "¿Qué es lo que más odias en un libro?",
+        "description": "",
+        "options": {
+          "lack_of_logic": "Falta de lógica",
+          "slow_speed": "Un ritmo lento",
+          "lack_of_humor": "Falta de humor",
+          "generic_ending": "Un final demasiado genérico"
+        }
+      },
+      "favorite_topics": {
+        "title": "¿Cuáles son tus temas favoritos?",
+        "description": "Elige hasta 3 temas que te gusten",
+        "options": {
+          "young_adult": "Jóvenes adultos",
+          "romance": "Romance",
+          "bad_boy": "Chico malo",
+          "werewolf": "Hombre lobo",
+          "action": "Acción",
+          "royal_obsession": "Obsesión real",
+          "billionaire": "Millonario"
+        }
+      }
+    }
+  },
+  "email": {
+    "title": "Correo electrónico",
+    "description": "Ingresa tu correo electrónico para obtener acceso completo",
+    "placeholder": "Tu correo electrónico",
+    "privacy_notice": "Al continuar, acepto",
+    "privacy_policy": "Política de privacidad",
+    "terms_of_use": "Términos de uso"
+  },
+  "result": {
+    "title": "Gracias",
+    "description": "por apoyarnos y completar el cuestionario",
+    "download": "Descargar mis respuestas",
+    "retake": "Volver a hacer el cuestionario"
+  },
+  "common": {
+    "and": "y",
+    "next": "Siguiente"
+  }
+} 
