@@ -1,4 +1,4 @@
-@import "../../assets/styles/_resources";
+@import '../../assets/styles/_resources';
 
 .header {
   position: relative;
@@ -9,7 +9,7 @@
 
   a {
     position: absolute;
-    transition: opacity .2s ease;
+    transition: opacity 0.2s ease;
 
     @media (min-width: $tb_bp) {
       &:hover {

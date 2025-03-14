@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { QuizHeader } from '@/components/QuizHeader'
 import { QuizOptions } from '@/components/QuizOptions'
 import { Question } from '@/types/quiz'
+import { Button } from '../ui/Button'
 import styles from './styles.module.scss'
 
 const parseTextWithTags = (text: string) => {
@@ -58,6 +59,8 @@ export function QuizContent({
         {t('common.next')}
       </Link>
       {/* )} */}
+
+      <Button onClick={() => null}>{t('common.next')}</Button>
     </div>
   )
 }
