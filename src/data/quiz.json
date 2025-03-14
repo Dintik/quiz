@@ -1,0 +1,123 @@
+{
+  "questions": [
+    {
+      "type": "single",
+      "question": "What is your preferred language?",
+      "description": "Choose language",
+      "options": [
+        { "text": "English" },
+        { "text": "French" },
+        { "text": "German" },
+        { "text": "Spanish" }
+      ]
+    },
+    {
+      "type": "cards",
+      "question": "What gender do you identify with?",
+      "description": "Please share how do you identify yourself",
+      "options": [
+        {
+          "text": "Female",
+          "image": "/images/female.jpg"
+        },
+        {
+          "text": "Male",
+          "image": "/images/male.jpg"
+        },
+        {
+          "text": "Other",
+          "image": "/images/other.jpg"
+        }
+      ]
+    },
+    {
+      "type": "single",
+      "question": "What is your age?",
+      "description": "",
+      "options": [
+        { "text": "18-29 years" },
+        { "text": "30-39 years" },
+        { "text": "40-49 years" },
+        { "text": "50+" }
+      ]
+    },
+    {
+      "type": "multiple",
+      "question": "What do you hate the most in a book?",
+      "description": "",
+      "options": [
+        { "text": "Lack of logic" },
+        { "text": "A slow speed" },
+        { "text": "Lack of humor" },
+        { "text": "Way too generic ending" }
+      ]
+    },
+    {
+      "type": "bubble",
+      "question": "What are your favorite topics?",
+      "description": "Choose up to 3 topics you like",
+      "optionsByAge": {
+        "18-29 years": [
+          {
+            "text": "Young Adult",
+            "image": "/images/youngAdult.jpg"
+          },
+          {
+            "text": "Romance",
+            "image": "/images/romance.jpg"
+          },
+          {
+            "text": "Bad Boy",
+            "image": "/images/badBoy.jpg"
+          },
+          {
+            "text": "Werewolf",
+            "image": "/images/werewolf.jpg"
+          }
+        ],
+        "30-39 years": [
+          {
+            "text": "Action",
+            "image": "/images/action.jpg"
+          },
+          {
+            "text": "Royal Obsession",
+            "image": "/images/royalObsession.jpg"
+          },
+          {
+            "text": "Romance",
+            "image": "/images/romance.jpg"
+          },
+          {
+            "text": "Billionaire",
+            "image": "/images/billionaire.jpg"
+          }
+        ],
+        "40-49 years": [
+          {
+            "text": "Royal Obsession",
+            "image": "/images/royalObsession.jpg"
+          },
+          {
+            "text": "Billionaire",
+            "image": "/images/billionaire.jpg"
+          },
+          {
+            "text": "Action",
+            "image": "/images/action.jpg"
+          }
+        ],
+        "50+": [
+          {
+            "text": "Action",
+            "image": "/images/action.jpg"
+          },
+          {
+            "text": "Royal Obsession",
+            "image": "/images/royalObsession.jpg"
+          }
+        ]
+      }
+    }
+  ]
+} 

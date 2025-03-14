@@ -1,14 +1,20 @@
 import type { Metadata } from 'next'
-import { Albert_Sans, Nunito_Sans } from 'next/font/google'
+import { Albert_Sans, Nunito_Sans, Niconne } from 'next/font/google'
 import '@/assets/styles/globals.css'
 
-const geistSans = Albert_Sans({
+const albertSans = Albert_Sans({
   variable: '--font-albert-sans',
   subsets: ['latin']
 })
 
-const geistMono = Nunito_Sans({
+const nunitoSans = Nunito_Sans({
   variable: '--font-nunito-sans',
+  subsets: ['latin']
+})
+
+const niconne = Niconne({
+  weight: '400',
+  variable: '--font-niconne',
   subsets: ['latin']
 })
 
@@ -24,7 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${albertSans.variable} ${nunitoSans.variable} ${niconne.variable}`}
+      >
         {children}
       </body>
     </html>
