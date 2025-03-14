@@ -1,4 +1,5 @@
 'use client'
+import { Button } from '@/components/ui/Button'
 import Link from 'next/link'
 
 export default function ResultPage() {
@@ -15,6 +16,10 @@ export default function ResultPage() {
 
       <button onClick={() => null}>Download my answers</button>
       <Link href={'/quiz/1'}>Retake quiz</Link>
+      <Button onClick={() => null}>Retake quiz</Button>
+      <Button isLoading onClick={() => null}>
+        Retake quiz
+      </Button>
     </div>
   )
 }

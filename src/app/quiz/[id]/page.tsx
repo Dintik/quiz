@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import quizData from '@/data/quiz.json'
+import { QuizHeader } from '@/components/QuizHeader'
 
 interface QuizPageProps {
   params: Promise<{ id?: string }>
@@ -23,15 +24,7 @@ export default async function QuizPage({ params }: QuizPageProps) {
 
   return (
     <div>
-      <header>
-        {currentPage > 1 && (
-          <Link href={`/quiz/${currentPage - 1}`}>Previous</Link>
-        )}
-        <p>
-          {currentPage}/{totalPages}
-        </p>
-        <div>TODO: progressbar</div>
-      </header>
+      <QuizHeader currentPage={currentPage} totalPages={totalPages} />
 
       <h1>{question.question}</h1>
 
