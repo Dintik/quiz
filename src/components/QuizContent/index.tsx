@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { QuizHeader } from '@/components/QuizHeader'
 import { QuizOptions } from '@/components/QuizOptions'
 import { Question } from '@/types/quiz'
+import styles from './styles.module.scss'
 
 interface QuizContentProps {
   question: Question
@@ -21,18 +22,25 @@ export function QuizContent({
   const isLastPage = currentPage === totalPages
 
   return (
-    <div>
+    <div className={styles.quizContent}>
       <QuizHeader currentPage={currentPage} totalPages={totalPages} />
 
-      <h1>{t(question.title)}</h1>
+      <div className={styles.quizContent__header}>
+        <h1
+          className={`${styles.quizContent__title} ${t(question.description) && styles.quizContent__titleGrey}`}
+        >
+          {t(question.title)}
+        </h1>
+        {t(question.description) && (
+          <p className={styles.quizContent__desc}>{t(question.description)}</p>
+        )}
 
-      <p>{t(question.description)}</p>
-
-      <QuizOptions
-        question={question}
-        currentPage={currentPage}
-        isLastPage={isLastPage}
-      />
+        <QuizOptions
+          question={question}
+          currentPage={currentPage}
+          isLastPage={isLastPage}
+        />
+      </div>
 
       {/* {showNextButton && ( */}
       <Link href={isLastPage ? '/email' : `/quiz/${currentPage + 1}`}>

@@ -1,0 +1,41 @@
+@import "../../assets/styles/_resources";
+
+.quizContent {
+  display: flex;
+  flex-direction: column;
+  gap: $sp_gap;
+  text-align: center;
+
+  @media (min-width: $tb_bp) {
+    gap: $tb_gap;
+  }
+
+  @media (min-width: $dt_bp) {
+    gap: $dt_gap;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__title {
+    font-size: 28px;
+    line-height: 34px;
+    font-weight: 700;
+    font-family: var(--font-nunito-sans);
+  }
+
+  &__titleGrey {
+    color: $text_grey_color3;
+  }
+
+  &__desc {
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: var(--font-nunito-sans);
+    color: $text_grey_color;
+  }
+}
