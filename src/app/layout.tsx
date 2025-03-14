@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Albert_Sans, Nunito_Sans, Niconne } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getLocale } from 'next-intl/server'
+import { Container } from '@/components/ui/Container'
 import '@/assets/styles/globals.css'
 
 const albertSans = Albert_Sans({
@@ -39,7 +40,7 @@ export default async function RootLayout({
         className={`${albertSans.variable} ${nunitoSans.variable} ${niconne.variable}`}
       >
         <NextIntlClientProvider messages={messages} locale={locale}>
-          {children}
+          <Container>{children}</Container>
         </NextIntlClientProvider>
       </body>
     </html>

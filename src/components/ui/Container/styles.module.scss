@@ -1,0 +1,18 @@
+@import "../../../assets/styles/_resources";
+
+.container {
+    width: 100%;
+    padding: $sp_gap;
+    max-width: $container_sp;
+    margin: 0 auto;
+
+    @media (min-width: $tb_bp) {
+        padding: $tb_gap;
+        max-width: $container_tb;
+    }
+
+    @media (min-width: $dt_bp) {
+        padding: $dt_gap;
+        max-width: $container_dt;
+    }
+}
