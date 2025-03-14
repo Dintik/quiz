@@ -18,15 +18,15 @@
       "options": [
         {
           "text": "quiz.questions.gender.options.female",
-          "image": "/images/female.jpg"
+          "image": "/quiz/gender/female.png"
         },
         {
           "text": "quiz.questions.gender.options.male",
-          "image": "/images/male.jpg"
+          "image": "/quiz/gender/male.png"
         },
         {
           "text": "quiz.questions.gender.options.other",
-          "image": "/images/other.jpg"
+          "image": "/quiz/gender/other.png"
         }
       ]
     },
@@ -60,61 +60,61 @@
         "quiz.questions.age.options.18-29": [
           {
             "text": "quiz.questions.favorite_topics.options.young_adult",
-            "image": "/images/youngAdult.jpg"
+            "image": "/quiz/topics/youngAdult.png"
           },
           {
             "text": "quiz.questions.favorite_topics.options.romance",
-            "image": "/images/romance.jpg"
+            "image": "/quiz/topics/romance.png"
           },
           {
             "text": "quiz.questions.favorite_topics.options.bad_boy",
-            "image": "/images/badBoy.jpg"
+            "image": "/quiz/topics/badBoy.png"
           },
           {
             "text": "quiz.questions.favorite_topics.options.werewolf",
-            "image": "/images/werewolf.jpg"
+            "image": "/quiz/topics/werewolf.png"
           }
         ],
         "quiz.questions.age.options.30-39": [
           {
             "text": "quiz.questions.favorite_topics.options.action",
-            "image": "/images/action.jpg"
+            "image": "/quiz/topics/action.png"
           },
           {
             "text": "quiz.questions.favorite_topics.options.royal_obsession",
-            "image": "/images/royalObsession.jpg"
+            "image": "/quiz/topics/royalObsession.png"
           },
           {
             "text": "quiz.questions.favorite_topics.options.romance",
-            "image": "/images/romance.jpg"
+            "image": "/quiz/topics/romance.png"
           },
           {
             "text": "quiz.questions.favorite_topics.options.billionaire",
-            "image": "/images/billionaire.jpg"
+            "image": "/quiz/topics/billionaire.png"
           }
         ],
         "quiz.questions.age.options.40-49": [
           {
             "text": "quiz.questions.favorite_topics.options.royal_obsession",
-            "image": "/images/royalObsession.jpg"
+            "image": "/quiz/topics/royalObsession.png"
           },
           {
             "text": "quiz.questions.favorite_topics.options.billionaire",
-            "image": "/images/billionaire.jpg"
+            "image": "/quiz/topics/billionaire.png"
           },
           {
             "text": "quiz.questions.favorite_topics.options.action",
-            "image": "/images/action.jpg"
+            "image": "/quiz/topics/action.png"
           }
         ],
         "quiz.questions.age.options.50+": [
           {
             "text": "quiz.questions.favorite_topics.options.action",
-            "image": "/images/action.jpg"
+            "image": "/quiz/topics/action.png"
           },
           {
             "text": "quiz.questions.favorite_topics.options.royal_obsession",
-            "image": "/images/royalObsession.jpg"
+            "image": "/quiz/topics/royalObsession.png"
           }
         ]
       }
