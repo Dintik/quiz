@@ -11,19 +11,20 @@
   },
   "dependencies": {
     "next": "15.2.2",
+    "next-intl": "^4.0.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sass": "^1.85.1"
   },
   "devDependencies": {
-    "@svgr/webpack": "^8.1.0",
     "@eslint/eslintrc": "^3",
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.2",
-    "typescript": "^5",
-    "prettier": "^3.5.3"
+    "prettier": "^3.5.3",
+    "typescript": "^5"
   }
 }
