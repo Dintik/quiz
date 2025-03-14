@@ -2,8 +2,14 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import quizData from '@/data/quiz.json'
 
-export default function QuizPage({ params }: { params: { id: string } }) {
-  const currentPage = parseInt(params.id)
+interface QuizPageProps {
+  params: Promise<{ id?: string }>
+}
+
+export default async function QuizPage({ params }: QuizPageProps) {
+  const { id } = await params
+
+  const currentPage = id ? parseInt(id) : 0
   const totalPages = quizData.questions.length
   const question = quizData.questions[currentPage - 1]
 
