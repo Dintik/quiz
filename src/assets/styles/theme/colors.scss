@@ -1,0 +1,42 @@
+/* MAIN COLOR VARIABLES */
+$primary_color: #E4229C;
+$secondary_color: #E8EAF2;
+$error_color: red;
+
+/* BACKGROUND VARIABLES */
+$page_bg: #1F002B;
+
+/* TEXT VARIABLES */
+$text_white_color: #FFFFFF;
+$text_pink_color: #E4229B;
+$text_pink_color2: #EB2F9A;
+$text_grey_color: #C4C8CC;
+$text_grey_color2: #B6B8C3;
+
+/* BUTTON VARIABLES */
+$button_color: $text_white_color;
+$button_bg: #E4229C;
+$button_bg2: #36173D;
+$button_bg3: #E4229B33;
+$button_bg3: #E4229B33;
+$button_border: #E4229B;
+$button_disabled_opacity: .4;
+$button_hover_opacity: .8;
+
+/* CHECKBOX VARIABLES */
+$checkbox_bg: #36173D;
+$checkbox_bg_active: #E4229C;
+$checkbox_border: #E4229C;
+
+/* INPUT VARIABLES */
+$input_placeholder_color: #C4C8CC80;
+$input_placeholder_focus_color: #C4C8CC;
+$input_bg_color: #36173D;
+$input_border_color: #36173D;
+
+$input_active_bg_color: #36173D;
+$input_active_border_color: #36173D;
+$input_text_color: $text_white_color;
+
+$input_error_border_color: $error_color;
+$input_error_label_color: $error_color;
