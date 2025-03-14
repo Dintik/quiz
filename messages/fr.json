@@ -25,7 +25,7 @@
         }
       },
       "hate_in_book": {
-        "title": "Que détestez-vous le plus dans un livre?",
+        "title": "Que ###détestez### le plus dans un livre?",
         "description": "",
         "options": {
           "lack_of_logic": "Le manque de logique",

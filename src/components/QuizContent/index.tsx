@@ -7,6 +7,17 @@ import { QuizOptions } from '@/components/QuizOptions'
 import { Question } from '@/types/quiz'
 import styles from './styles.module.scss'
 
+const parseTextWithTags = (text: string) => {
+  const parts = text.split(/(###.*?###)/)
+  return parts.map((part, index) => {
+    if (part.startsWith('###') && part.endsWith('###')) {
+      const content = part.replace(/###/g, '')
+      return <span key={index}>{content}</span>
+    }
+    return part
+  })
+}
+
 interface QuizContentProps {
   question: Question
   currentPage: number
@@ -29,7 +40,7 @@ export function QuizContent({
         <h1
           className={`${styles.quizContent__title} ${t(question.description) && styles.quizContent__titleGrey}`}
         >
-          {t(question.title)}
+          {parseTextWithTags(t(question.title))}
         </h1>
         {t(question.description) && (
           <p className={styles.quizContent__desc}>{t(question.description)}</p>

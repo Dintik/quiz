@@ -25,7 +25,7 @@
         }
       },
       "hate_in_book": {
-        "title": "¿Qué es lo que más odias en un libro?",
+        "title": "¿Qué es lo que más ###odias### en un libro?",
         "description": "",
         "options": {
           "lack_of_logic": "Falta de lógica",

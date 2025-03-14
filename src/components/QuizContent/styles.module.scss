@@ -1,4 +1,4 @@
-@import "../../assets/styles/_resources";
+@use "../../assets/styles/_resources" as *;
 
 .quizContent {
   display: flex;
@@ -25,6 +25,10 @@
     line-height: 34px;
     font-weight: 700;
     font-family: var(--font-nunito-sans);
+
+    span {
+      color: $text_pink_color;
+    }
   }
 
   &__titleGrey {
