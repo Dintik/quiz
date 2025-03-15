@@ -1,6 +1,9 @@
+@use '../../assets/styles/_resources' as *;
+
 .options {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   margin: 2rem 0;
 }

@@ -16,16 +16,27 @@ interface QuizOptionsProps {
 
 export const QuizOptions = ({ question, currentPage }: QuizOptionsProps) => {
   const { options, title, type, optionsByAge } = question
-  const { saveAnswer } = useQuizStore()
+  const { saveAnswer, answers } = useQuizStore()
   const { handleLanguageChange } = useLocale()
-  const [selectedOption, setSelectedOption] = useState('')
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([])
   const t = useTranslations()
 
-  const handleOptionSelect = (optionText: string) => {
-    setSelectedOption(optionText)
+  const isMultiSelect = type === 'multiple-select' || type === 'bubble'
 
-    // First save the answer
-    saveAnswer(currentPage, title, type, optionText)
+  const handleOptionSelect = (optionText: string) => {
+    const newSelectedOptions = isMultiSelect
+      ? selectedOptions.includes(optionText)
+        ? selectedOptions.filter((option) => option !== optionText)
+        : [...selectedOptions, optionText]
+      : [optionText]
+
+    setSelectedOptions(newSelectedOptions)
+    saveAnswer(
+      currentPage,
+      title,
+      type,
+      isMultiSelect ? newSelectedOptions : optionText
+    )
 
     // If this is the language selection question (first question)
     // handle the language change after saving the answer
@@ -38,23 +49,30 @@ export const QuizOptions = ({ question, currentPage }: QuizOptionsProps) => {
 
   if (!options && !optionsByAge) return null
 
-  // TODO: add optionsByAge
+  let optionsToRender = options
+  if (optionsByAge) {
+    // Get age answer if exists (question 3)
+    const ageAnswer = answers.find((answer) => answer.order === 3)
+      ?.answer as string
+    if (ageAnswer) {
+      optionsToRender = optionsByAge[ageAnswer] || options
+    }
+  }
 
   return (
     <div className={styles.options}>
-      {options &&
-        options.map((option, index) => (
-          <QuizOption
-            key={index}
-            option={{
-              ...option,
-              text: currentPage === 1 ? option.text : t(option.text)
-            }}
-            type={type}
-            selectedOption={selectedOption === option.text}
-            onClick={() => handleOptionSelect(option.text)}
-          />
-        ))}
+      {optionsToRender?.map((option, index) => (
+        <QuizOption
+          key={index}
+          option={{
+            ...option,
+            text: currentPage === 1 ? option.text : t(option.text)
+          }}
+          type={type}
+          selectedOption={selectedOptions.includes(option.text)}
+          onClick={() => handleOptionSelect(option.text)}
+        />
+      ))}
     </div>
   )
 }

@@ -17,11 +17,12 @@ $text_grey_color3: #f2f3f5;
 /* BUTTON VARIABLES */
 $button_color: $text_white_color;
 $button_bg: #e4229c;
-$button_bg2: #36173d;
-$button_bg3: #e4229b33;
-$button_border: #e4229b;
 $button_disabled_opacity: 0.4;
 $button_hover_opacity: 0.8;
+
+$quiz_button_bg: #36173d;
+$quiz_button_bg2: #e4229b33;
+$quiz_bubble_border: 2px solid #e4229b;
 
 /* CHECKBOX VARIABLES */
 $checkbox_bg: #36173d;

@@ -46,13 +46,13 @@ export function QuizContent({
         {t(question.description) && (
           <p className={styles.quizContent__desc}>{t(question.description)}</p>
         )}
-
-        <QuizOptions
-          question={question}
-          currentPage={currentPage}
-          isLastPage={isLastPage}
-        />
       </div>
+
+      <QuizOptions
+        question={question}
+        currentPage={currentPage}
+        isLastPage={isLastPage}
+      />
 
       {/* {showNextButton && ( */}
       <Link href={isLastPage ? '/email' : `/quiz/${currentPage + 1}`}>

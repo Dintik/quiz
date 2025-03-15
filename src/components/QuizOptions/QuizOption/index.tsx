@@ -11,12 +11,12 @@ export interface QuizOptionProps {
 
 export const QuizOption = ({
   option,
-  // type,
+  type,
   selectedOption,
   onClick
 }: QuizOptionProps) => (
   <button
-    className={`${styles.option} ${selectedOption && styles.option__selected}`}
+    className={`${styles.option} ${styles[`option__${type}`]} ${selectedOption && styles.option__selected}`}
     onClick={onClick}
   >
     {option.image && (
@@ -25,8 +25,8 @@ export const QuizOption = ({
           src={option.image}
           alt={option.text}
           className={styles.option__image}
-          width={48}
-          height={48}
+          width={type === 'bubble' ? 25 : 52}
+          height={type === 'bubble' ? 25 : 52}
         />
       </div>
     )}
