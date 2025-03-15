@@ -1,19 +1,16 @@
 'use client'
 
-import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { QuizHeader } from '@/components/QuizHeader'
 import { QuizOptions } from '@/components/QuizOptions'
 import { Question } from '@/types/quiz'
-import { Button } from '../ui/Button'
 import styles from './styles.module.scss'
 
 const parseTextWithTags = (text: string) => {
   const parts = text.split(/(###.*?###)/)
   return parts.map((part, index) => {
     if (part.startsWith('###') && part.endsWith('###')) {
-      const content = part.replace(/###/g, '')
-      return <span key={index}>{content}</span>
+      return <span key={index}>{part.slice(3, -3)}</span>
     }
     return part
   })
@@ -31,7 +28,6 @@ export function QuizContent({
   totalPages
 }: QuizContentProps) {
   const t = useTranslations()
-  const isLastPage = currentPage === totalPages
 
   return (
     <div className={styles.quizContent}>
@@ -51,16 +47,8 @@ export function QuizContent({
       <QuizOptions
         question={question}
         currentPage={currentPage}
-        isLastPage={isLastPage}
+        isLastPage={currentPage === totalPages}
       />
-
-      {/* {showNextButton && ( */}
-      <Link href={isLastPage ? '/email' : `/quiz/${currentPage + 1}`}>
-        {t('common.next')}
-      </Link>
-      {/* )} */}
-
-      <Button onClick={() => null}>{t('common.next')}</Button>
     </div>
   )
 }

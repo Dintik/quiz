@@ -1,11 +1,13 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import { useQuizStore } from '@/hooks/useQuizStore'
 import { useLocale } from '@/hooks/useLocale'
 import { Question } from '@/types/quiz'
 import { QuizOption } from './QuizOption'
+import { Button } from '../ui/Button'
 import styles from './styles.module.scss'
 
 interface QuizOptionsProps {
@@ -14,12 +16,21 @@ interface QuizOptionsProps {
   isLastPage: boolean
 }
 
-export const QuizOptions = ({ question, currentPage }: QuizOptionsProps) => {
+export const QuizOptions = ({
+  question,
+  currentPage,
+  isLastPage
+}: QuizOptionsProps) => {
   const { options, title, type, optionsByAge } = question
   const { saveAnswer, answers } = useQuizStore()
   const { handleLanguageChange } = useLocale()
   const [selectedOptions, setSelectedOptions] = useState<string[]>([])
   const t = useTranslations()
+  const router = useRouter()
+
+  const handleNext = () => {
+    router.push(isLastPage ? '/email' : `/quiz/${currentPage + 1}`)
+  }
 
   const isMultiSelect = type === 'multiple-select' || type === 'bubble'
 
@@ -42,8 +53,11 @@ export const QuizOptions = ({ question, currentPage }: QuizOptionsProps) => {
     // handle the language change after saving the answer
     if (currentPage === 1) {
       handleLanguageChange(
-        optionText as 'English' | 'French' | 'German' | 'Spanish'
+        optionText as 'English' | 'French' | 'German' | 'Spanish',
+        '/quiz/2'
       )
+    } else if (!isMultiSelect) {
+      handleNext()
     }
   }
 
@@ -60,19 +74,27 @@ export const QuizOptions = ({ question, currentPage }: QuizOptionsProps) => {
   }
 
   return (
-    <div className={styles.options}>
-      {optionsToRender?.map((option, index) => (
-        <QuizOption
-          key={index}
-          option={{
-            ...option,
-            text: currentPage === 1 ? option.text : t(option.text)
-          }}
-          type={type}
-          selectedOption={selectedOptions.includes(option.text)}
-          onClick={() => handleOptionSelect(option.text)}
-        />
-      ))}
-    </div>
+    <>
+      <div className={styles.options}>
+        {optionsToRender?.map((option, index) => (
+          <QuizOption
+            key={index}
+            option={{
+              ...option,
+              text: currentPage === 1 ? option.text : t(option.text)
+            }}
+            type={type}
+            selectedOption={selectedOptions.includes(option.text)}
+            onClick={() => handleOptionSelect(option.text)}
+          />
+        ))}
+      </div>
+
+      {isMultiSelect && (
+        <Button onClick={handleNext} disabled={selectedOptions.length === 0}>
+          {t('common.next')}
+        </Button>
+      )}
+    </>
   )
 }
