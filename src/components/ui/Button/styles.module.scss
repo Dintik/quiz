@@ -1,4 +1,4 @@
-@import '../../../assets/styles/_resources';
+@use '../../../assets/styles/_resources' as *;
 
 .button {
   font-size: 17px;
