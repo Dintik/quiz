@@ -2,7 +2,6 @@
 
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { Button } from '@/components/ui/Button'
 import { useQuizStore } from '@/hooks/useQuizStore'
@@ -12,14 +11,14 @@ import styles from './styles.module.scss'
 
 export default function ResultPage() {
   const t = useTranslations()
-  const router = useRouter()
   const { clearAnswers } = useQuizStore()
   const [isLoading, setIsLoading] = useState(false)
 
   const handleRetake = () => {
     setIsLoading(true)
     clearAnswers()
-    router.push('/quiz/1')
+    document.cookie = 'NEXT_LOCALE=;path=/'
+    window.location.href = '/quiz/1'
   }
 
   return (
