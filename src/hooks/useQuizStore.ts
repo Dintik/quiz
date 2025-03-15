@@ -41,8 +41,14 @@ export const useQuizStore = () => {
     setAnswers(newAnswers)
   }
 
+  const clearAnswers = () => {
+    localStorage.removeItem(QUIZ_STORE_KEY)
+    setAnswers([])
+  }
+
   return {
     answers,
-    saveAnswer
+    saveAnswer,
+    clearAnswers
   }
 }

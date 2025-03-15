@@ -1,13 +1,26 @@
 'use client'
+
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 import { Button } from '@/components/ui/Button'
+import { useQuizStore } from '@/hooks/useQuizStore'
 import Download from '@/assets/images/Download.png'
 import Checkmark from '@/assets/images/Checkmark.png'
 import styles from './styles.module.scss'
 
 export default function ResultPage() {
   const t = useTranslations()
+  const router = useRouter()
+  const { clearAnswers } = useQuizStore()
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleRetake = () => {
+    setIsLoading(true)
+    clearAnswers()
+    router.push('/quiz/1')
+  }
 
   return (
     <div className={styles.result}>
@@ -31,8 +44,9 @@ export default function ResultPage() {
           <Image src={Download} alt='download icon' width={42} height={42} />
           {t('result.download')}
         </button>
-        {/* <Link href={'/quiz/1'}>{t('result.retake')}</Link> */}
-        <Button onClick={() => null}>{t('result.retake')}</Button>
+        <Button onClick={handleRetake} isLoading={isLoading}>
+          {t('result.retake')}
+        </Button>
       </div>
     </div>
   )
