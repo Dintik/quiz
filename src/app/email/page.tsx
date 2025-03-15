@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import Joi from 'joi'
 import { Button } from '@/components/ui/Button'
+import { useQuizStore } from '@/hooks/useQuizStore'
 import styles from './styles.module.scss'
 
 const emailSchema = Joi.string().email({ tlds: false }).required().messages({
@@ -16,6 +17,7 @@ const emailSchema = Joi.string().email({ tlds: false }).required().messages({
 export default function EmailPage() {
   const t = useTranslations()
   const router = useRouter()
+  const { saveAnswer } = useQuizStore()
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -33,6 +35,7 @@ export default function EmailPage() {
   const handleNext = () => {
     if (validateEmail()) {
       setIsLoading(true)
+      saveAnswer(6, t('email.title'), 'email', email)
       router.push('/result')
     }
   }

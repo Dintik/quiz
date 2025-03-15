@@ -43,11 +43,16 @@ export const QuizOptions = ({
       : [optionText]
 
     setSelectedOptions(newSelectedOptions)
+
     saveAnswer(
       currentPage,
-      title,
+      t(title).replace(/###/g, ''),
       type,
-      isMultiSelect ? newSelectedOptions : optionText
+      isMultiSelect
+        ? newSelectedOptions.map((opt) => (currentPage === 1 ? opt : t(opt)))
+        : currentPage === 1
+          ? optionText
+          : t(optionText)
     )
 
     // If this is the language selection question (first question)
@@ -70,7 +75,11 @@ export const QuizOptions = ({
     const ageAnswer = answers.find((answer) => answer.order === 3)
       ?.answer as string
     if (ageAnswer) {
-      optionsToRender = optionsByAge[ageAnswer] || options
+      // Find matching age key by comparing translated values
+      const ageKey = Object.keys(optionsByAge).find(
+        (key) => t(key) === ageAnswer
+      )
+      optionsToRender = ageKey ? optionsByAge[ageKey] : options
     }
   }
 
