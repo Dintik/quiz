@@ -1,48 +1,50 @@
 import { useState, useEffect } from 'react'
-
-const QUIZ_STORE_KEY = 'quiz_answers'
-
-interface QuizAnswer {
-  order: number
-  title: string
-  type: string
-  answer: string | string[]
-}
+import {
+  QuizAnswer,
+  getQuizAnswers,
+  saveQuizAnswer,
+  clearQuizAnswers
+} from '@/services/quiz/answers'
 
 export const useQuizStore = () => {
   const [answers, setAnswers] = useState<QuizAnswer[]>([])
 
   useEffect(() => {
     // Load saved answers on mount
-    const savedAnswers = localStorage.getItem(QUIZ_STORE_KEY)
-    if (savedAnswers) {
-      setAnswers(JSON.parse(savedAnswers))
+    async function loadAnswers() {
+      const savedAnswers = await getQuizAnswers()
+      setAnswers(savedAnswers)
     }
+
+    loadAnswers()
   }, [])
 
-  const saveAnswer = (
+  const saveAnswer = async (
     order: number,
     title: string,
     type: string,
     answer: string | string[]
   ) => {
-    const newAnswers = [...answers]
-    const existingAnswerIndex = newAnswers.findIndex((a) => a.order === order)
+    const newAnswer: QuizAnswer = { order, title, type, answer }
+    await saveQuizAnswer(newAnswer)
 
-    if (existingAnswerIndex !== -1) {
-      // Update existing answer
-      newAnswers[existingAnswerIndex] = { order, title, type, answer }
-    } else {
-      // Add new answer
-      newAnswers.push({ order, title, type, answer })
-    }
+    // Update local state directly
+    setAnswers((prevAnswers) => {
+      const newAnswers = [...prevAnswers]
+      const existingIndex = newAnswers.findIndex((a) => a.order === order)
 
-    localStorage.setItem(QUIZ_STORE_KEY, JSON.stringify(newAnswers))
-    setAnswers(newAnswers)
+      if (existingIndex !== -1) {
+        newAnswers[existingIndex] = newAnswer
+      } else {
+        newAnswers.push(newAnswer)
+      }
+
+      return newAnswers
+    })
   }
 
-  const clearAnswers = () => {
-    localStorage.removeItem(QUIZ_STORE_KEY)
+  const clearAnswers = async () => {
+    await clearQuizAnswers()
     setAnswers([])
   }
 

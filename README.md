@@ -45,7 +45,11 @@ npm install
 3. Create a `.env.local` file in the root directory:
 
 ```env
-# Add any required environment variables here
+# Data source configuration: 'local' (default) or 'rest'
+NEXT_PUBLIC_DATA_SOURCE=local
+
+# API URL for 'rest' data source (required if NEXT_PUBLIC_DATA_SOURCE=rest)
+NEXT_PUBLIC_API_URL=http://your-api-url
 ```
 
 ## 🚀 Development
@@ -99,8 +103,8 @@ quiz/
 ├── src/
 │   ├── app/          # Next.js app router pages
 │   ├── components/   # Reusable React components
-│   ├── hooks/        # Custom React hooks
-│   ├── store/        # State management
+│   ├── hooks/        # Custom React hooks and state management
+│   ├── services/     # Business logic services
 │   ├── types/        # TypeScript types/interfaces
 │   ├── i18n/         # Internationalization files
 │   ├── data/         # Static data/configurations
