@@ -8,6 +8,7 @@ import { useLocale } from '@/hooks/useLocale'
 import { Question } from '@/types/quiz'
 import { QuizOption } from './QuizOption'
 import { Button } from '../ui/Button'
+import { Spinner } from '../ui/Spinner'
 import styles from './styles.module.scss'
 
 interface QuizOptionsProps {
@@ -88,6 +89,7 @@ export const QuizOptions = ({
             onClick={() => handleOptionSelect(option.text)}
           />
         ))}
+        {!optionsToRender && <Spinner />}
       </div>
 
       {isMultiSelect && (
