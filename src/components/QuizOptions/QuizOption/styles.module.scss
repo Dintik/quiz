@@ -31,6 +31,36 @@
     border-radius: 0.25rem;
   }
 
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $checkbox_bg;
+    border: $checkbox_border;
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    margin-left: auto;
+
+    svg {
+      width: 12px;
+      height: 9px;
+
+      path {
+        fill: transparent;
+        transition: fill 0.2s ease;
+      }
+    }
+
+    &_selected {
+      background-color: $checkbox_bg_active;
+
+      svg path {
+        fill: $text_white_color;
+      }
+    }
+  }
+
   // &__single-select {}
 
   &__multiple-select {
