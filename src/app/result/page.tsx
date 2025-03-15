@@ -26,12 +26,10 @@ export default function ResultPage() {
     const headers = ['order,title,type,answer']
 
     // Prepare data rows
-    const rows = answers.map((answer) => {
-      const answerValue = Array.isArray(answer.answer)
-        ? answer.answer.join(', ')
-        : answer.answer
-      return `${answer.order},"${answer.title}","${answer.type}","${answerValue}"`
-    })
+    const rows = answers.map(
+      ({ order, title, type, answer }) =>
+        `${order},"${title}","${type}","${Array.isArray(answer) ? answer.join(', ') : answer}"`
+    )
 
     // Join all rows with line breaks
     const csvContent = headers.concat(rows).join('\n')
