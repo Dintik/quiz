@@ -11,7 +11,7 @@ import styles from './styles.module.scss'
 
 export default function ResultPage() {
   const t = useTranslations()
-  const { clearAnswers } = useQuizStore()
+  const { clearAnswers, answers } = useQuizStore()
   const [isLoading, setIsLoading] = useState(false)
 
   const handleRetake = () => {
@@ -19,6 +19,37 @@ export default function ResultPage() {
     clearAnswers()
     document.cookie = 'NEXT_LOCALE=;path=/'
     window.location.href = '/quiz/1'
+  }
+
+  const handleDownload = () => {
+    // Prepare CSV headers
+    const headers = ['order,title,type,answer']
+
+    // Prepare data rows
+    const rows = answers.map((answer) => {
+      const answerValue = Array.isArray(answer.answer)
+        ? answer.answer.join(', ')
+        : answer.answer
+      return `${answer.order},"${answer.title}","${answer.type}","${answerValue}"`
+    })
+
+    // Join all rows with line breaks
+    const csvContent = headers.concat(rows).join('\n')
+
+    // Create Blob with proper encoding
+    const blob = new Blob(['\ufeff' + csvContent], {
+      type: 'text/csv;charset=utf-8'
+    })
+
+    // Create download link
+    const link = document.createElement('a')
+    link.href = URL.createObjectURL(blob)
+    link.download = 'quiz_answers.csv'
+
+    // Trigger download
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
   }
 
   return (
@@ -39,7 +70,7 @@ export default function ResultPage() {
         </div>
       </div>
       <div className={styles.result__buttons}>
-        <button className={styles.result__download} onClick={() => null}>
+        <button className={styles.result__download} onClick={handleDownload}>
           <Image src={Download} alt='download icon' width={42} height={42} />
           {t('result.download')}
         </button>
