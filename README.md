@@ -1,36 +1,172 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Quiz Application
 
-## Getting Started
+A modern quiz application built with Next.js 15, React 19, and TypeScript. This application provides an interactive quiz experience with internationalization support and smooth animations. Users can take quizzes while selecting their preferred language for the interface.
 
-First, run the development server:
+Live demo: [quiz-theta-mauve.vercel.app](https://quiz-theta-mauve.vercel.app)
+
+## 🚀 Features
+
+- **Modern Stack**: Built with Next.js 15 and React 19
+- **Type Safety**: Full TypeScript support (65.2% TypeScript)
+- **Internationalization**:
+  - Multi-language support using next-intl
+  - Available languages: English, French, German, Spanish
+  - Dynamic language switching
+- **Interactive Quiz System**:
+  - Step-by-step quiz progression
+  - Progress tracking (e.g., 1/5)
+  - Multiple choice questions
+  - Responsive option selection
+- **Smooth Animations**: Powered by Framer Motion
+- **Responsive Design**: Mobile-first approach
+- **Form Validation**: Using Joi for robust data validation
+- **Modern Styling**: SASS modules for component-based styling (33.5% SCSS)
+
+## 📋 Prerequisites
+
+- Node.js 18.x or higher
+- npm 9.x or higher
+
+## 🛠️ Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Dintik/quiz.git
+cd quiz
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create a `.env.local` file in the root directory:
+
+```env
+# Add any required environment variables here
+```
+
+## 🚀 Development
+
+To start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - Start development server
+- `npm run build` - Build production bundle
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run format` - Format code with Prettier
 
-## Learn More
+## 📱 Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. **Starting a Quiz**:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   - Navigate to the home page
+   - Click on the quiz you want to take
+   - The quiz will start automatically
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Language Selection**:
 
-## Deploy on Vercel
+   - Use the language selector in the navigation
+   - Choose from available languages (EN, FR, DE, ES)
+   - Interface will update immediately
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Taking the Quiz**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   - Read each question carefully
+   - Select your answer from the available options
+   - Progress is shown at the top (e.g., Question 1 of 5)
+   - Use navigation buttons to move between questions
+
+4. **Completing the Quiz**:
+   - Answer all questions to complete the quiz
+   - View your results at the end
+   - Option to retake or try different quizzes
+
+## 📁 Project Structure
+
+```
+quiz/
+├── src/
+│   ├── app/          # Next.js app router pages
+│   ├── components/   # Reusable React components
+│   ├── hooks/        # Custom React hooks
+│   ├── store/        # State management
+│   ├── types/        # TypeScript types/interfaces
+│   ├── i18n/         # Internationalization files
+│   ├── data/         # Static data/configurations
+│   └── assets/       # Media files and resources
+├── public/           # Static files
+└── messages/         # Translation messages
+```
+
+## 🧪 Code Quality
+
+The project uses:
+
+- ESLint for code linting
+- Prettier for code formatting
+- TypeScript for type checking
+- Husky for Git hooks
+  - Pre-commit hooks:
+    - Format check with Prettier
+    - Lint check with ESLint
+- Lint-staged for running checks only on changed files
+
+### Pre-commit Workflow
+
+When you try to create a commit, the following checks will run automatically:
+
+1. **Format and Lint** (only on staged files):
+   - `.js`, `.jsx`, `.ts`, `.tsx`: Prettier formatting and ESLint fixes
+   - `.json`, `.md`: Prettier formatting
+
+The commit will only proceed if all checks pass.
+
+## 🌐 Browser Support
+
+The application supports:
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## 📚 Documentation
+
+For more detailed documentation:
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Documentation](https://react.dev)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 👥 Authors
+
+- [Dintik](https://github.com/Dintik) - Initial work
+
+## 🙏 Acknowledgments
+
+- Next.js team for the amazing framework
+- Vercel for hosting and deployment platform
+- All contributors who have helped this project grow
