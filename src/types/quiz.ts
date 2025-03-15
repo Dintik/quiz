@@ -1,4 +1,4 @@
-interface Option {
+export interface Option {
   text: string
   image?: string
 }
@@ -7,7 +7,7 @@ interface AgeOptions {
   [key: string]: Option[]
 }
 
-type QuestionType =
+export type QuestionType =
   | 'single-select'
   | 'single-select-image'
   | 'multiple-select'
