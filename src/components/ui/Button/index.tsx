@@ -19,7 +19,7 @@ export const Button = ({
 }: ButtonProps) => (
   <button
     className={`${styles.button} 
-      ${disabled ? styles.button__disabled : ''} ${className}`}
+      ${disabled || isLoading ? styles.button__disabled : ''} ${className}`}
     onClick={onClick}
     disabled={isLoading || disabled}
   >

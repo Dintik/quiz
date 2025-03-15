@@ -18,6 +18,7 @@ export default function EmailPage() {
   const router = useRouter()
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   const validateEmail = () => {
     const { error } = emailSchema.validate(email)
@@ -31,6 +32,7 @@ export default function EmailPage() {
 
   const handleNext = () => {
     if (validateEmail()) {
+      setIsLoading(true)
       router.push('/result')
     }
   }
@@ -69,7 +71,11 @@ export default function EmailPage() {
         </p>
       </div>
 
-      <Button onClick={handleNext} disabled={isButtonDisabled}>
+      <Button
+        onClick={handleNext}
+        disabled={isButtonDisabled}
+        isLoading={isLoading}
+      >
         {t('common.next')}
       </Button>
     </div>
