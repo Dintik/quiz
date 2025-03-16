@@ -66,5 +66,8 @@
   "common": {
     "and": "and",
     "next": "Next"
+  },
+  "loader": {
+    "finding_collections": "Finding collections for you"
   }
 }

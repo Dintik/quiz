@@ -1,0 +1,54 @@
+@use '../../../assets/styles/_resources' as *;
+
+.loader {
+  width: max-content;
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  text-align: center;
+
+  &__animation {
+    position: relative;
+    width: 252px;
+    height: 252px;
+    margin: 0 auto;
+  }
+
+  &__circle {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+
+    &_background {
+      stroke: $secondary_color;
+      stroke-linecap: round;
+    }
+
+    &_progress {
+      stroke: $primary_color;
+      stroke-linecap: round;
+    }
+  }
+
+  &__percent {
+    font-size: 52px;
+    line-height: 100%;
+    font-weight: 800;
+    font-family: var(--font-albert-sans);
+
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__text {
+    font-size: 17px;
+    line-height: 25px;
+    font-weight: 600;
+    font-family: var(--font-albert-sans);
+  }
+}

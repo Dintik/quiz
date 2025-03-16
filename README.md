@@ -17,7 +17,11 @@ Live demo: [quiz-theta-mauve.vercel.app](https://quiz-theta-mauve.vercel.app)
   - Progress tracking (e.g., 1/5)
   - Multiple choice questions
   - Responsive option selection
-- **Smooth Animations**: Powered by Framer Motion
+  - Animated loading transitions between quiz completion and results
+- **Smooth Animations**:
+  - Powered by Framer Motion
+  - Custom animated loader with progress indication
+  - Animated text transitions
 - **Responsive Design**: Mobile-first approach
 - **Form Validation**: Using Joi for robust data validation
 - **Modern Styling**: SASS modules for component-based styling (33.5% SCSS)

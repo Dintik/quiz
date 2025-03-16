@@ -66,5 +66,8 @@
   "common": {
     "and": "et",
     "next": "Suivant"
+  },
+  "loader": {
+    "finding_collections": "Recherche de collections pour vous"
   }
 }

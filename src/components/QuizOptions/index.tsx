@@ -15,12 +15,14 @@ interface QuizOptionsProps {
   question: Question
   currentPage: number
   isLastPage: boolean
+  onLastQuestionComplete?: () => void
 }
 
 export const QuizOptions = ({
   question,
   currentPage,
-  isLastPage
+  isLastPage,
+  onLastQuestionComplete
 }: QuizOptionsProps) => {
   const { options, title, type, optionsByAge } = question
   const { saveAnswer, answers } = useQuizStore()
@@ -30,7 +32,15 @@ export const QuizOptions = ({
   const router = useRouter()
 
   const handleNext = () => {
-    router.push(isLastPage ? '/email' : `/quiz/${currentPage + 1}`)
+    if (isLastPage) {
+      if (onLastQuestionComplete) {
+        onLastQuestionComplete()
+      } else {
+        router.push('/email')
+      }
+    } else {
+      router.push(`/quiz/${currentPage + 1}`)
+    }
   }
 
   const isMultiSelect = type === 'multiple-select' || type === 'bubble'
