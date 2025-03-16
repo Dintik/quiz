@@ -7,7 +7,7 @@ Live demo: [quiz-theta-mauve.vercel.app](https://quiz-theta-mauve.vercel.app)
 ## 🚀 Features
 
 - **Modern Stack**: Built with Next.js 15 and React 19
-- **Type Safety**: Full TypeScript support (65.2% TypeScript)
+- **Type Safety**: Full TypeScript support (68.1% TypeScript)
 - **Internationalization**:
   - Multi-language support using next-intl
   - Available languages: English, French, German, Spanish
@@ -24,7 +24,7 @@ Live demo: [quiz-theta-mauve.vercel.app](https://quiz-theta-mauve.vercel.app)
   - Animated text transitions
 - **Responsive Design**: Mobile-first approach
 - **Form Validation**: Using Joi for robust data validation
-- **Modern Styling**: SASS modules for component-based styling (33.5% SCSS)
+- **Modern Styling**: SASS modules for component-based styling (30.3% SCSS)
 
 ## 📋 Prerequisites
 
@@ -97,6 +97,7 @@ The application will be available at [http://localhost:3000](http://localhost:30
 
 4. **Completing the Quiz**:
    - Answer all questions to complete the quiz
+   - See the animated loading screen while we prepare your results
    - View your results at the end
    - Option to retake or try different quizzes
 
